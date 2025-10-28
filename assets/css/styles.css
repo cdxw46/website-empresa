@@ -58,8 +58,28 @@ body {
 .age-actions { display: flex; gap: 12px; }
 
 .grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
-.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
-.card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; background: #222; }
+.card { 
+  background: var(--card); 
+  border: 1px solid var(--border); 
+  border-radius: 12px; 
+  overflow: hidden; 
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.card:hover { 
+  transform: translateY(-4px); 
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  border-color: var(--primary);
+}
+.card img { 
+  width: 100%; 
+  aspect-ratio: 4/3; 
+  object-fit: cover; 
+  background: #222; 
+  border-radius: 8px 8px 0 0;
+  transition: transform 0.3s ease;
+}
+.card:hover img { transform: scale(1.05); }
 .card h3 { margin: 12px 12px 0; }
 .card p { margin: 8px 12px 12px; color: var(--muted); }
 .card .btn { margin: 0 12px 12px; }
