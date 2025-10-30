@@ -1,7 +1,7 @@
 // Configuración de WhatsApp y textos
 // Cambia este número por el tuyo en formato internacional sin espacios ni guiones.
 // Ejemplo: "5215512345678" para México; "34600123456" para España.
-const WHATSAPP_NUMBER = "34000000000"; // TODO: reemplazar por tu número real
+const WHATSAPP_NUMBER = "34647089399"; // Número de WhatsApp real
 
 // Mensaje base que se añade al iniciar el chat
 const WHATSAPP_BASE_MESSAGE = "Hola, quiero comprar en Arbrep";
