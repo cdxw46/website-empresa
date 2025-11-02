@@ -1,0 +1,505 @@
+== map0 ==
+
+dumps/map0.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	48 63 01             	movslq (%rcx),%rax
+   7:	48 8d 44 c2 f8       	lea    -0x8(%rdx,%rax,8),%rax
+   c:	48 8b 10             	mov    (%rax),%rdx
+   f:	48 8d 14 d5 18 00 00 	lea    0x18(,%rdx,8),%rdx
+  16:	00 
+  17:	48 89 10             	mov    %rdx,(%rax)
+  1a:	c3                   	ret
+== map1 ==
+
+dumps/map1.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	48 89 d7             	mov    %rdx,%rdi
+   7:	48 8b 06             	mov    (%rsi),%rax
+   a:	8b 10                	mov    (%rax),%edx
+   c:	48 83 c0 04          	add    $0x4,%rax
+  10:	48 89 06             	mov    %rax,(%rsi)
+  13:	48 63 01             	movslq (%rcx),%rax
+  16:	48 8d 44 c7 f8       	lea    -0x8(%rdi,%rax,8),%rax
+  1b:	48 63 d2             	movslq %edx,%rdx
+  1e:	48 8b 08             	mov    (%rax),%rcx
+  21:	48 0f be 14 11       	movsbq (%rcx,%rdx,1),%rdx
+  26:	48 89 10             	mov    %rdx,(%rax)
+  29:	c3                   	ret
+== map2 ==
+
+dumps/map2.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	48 63 01             	movslq (%rcx),%rax
+   7:	48 c1 e0 03          	shl    $0x3,%rax
+   b:	48 8b 74 02 f8       	mov    -0x8(%rdx,%rax,1),%rsi
+  10:	48 29 74 02 f0       	sub    %rsi,-0x10(%rdx,%rax,1)
+  15:	83 29 01             	subl   $0x1,(%rcx)
+  18:	c3                   	ret
+== map3 ==
+
+dumps/map3.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	48 8b 06             	mov    (%rsi),%rax
+   7:	48 63 10             	movslq (%rax),%rdx
+   a:	48 8d 04 90          	lea    (%rax,%rdx,4),%rax
+   e:	48 89 06             	mov    %rax,(%rsi)
+  11:	c3                   	ret
+== map4 ==
+
+dumps/map4.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	48 63 01             	movslq (%rcx),%rax
+   7:	48 8d 74 c2 f8       	lea    -0x8(%rdx,%rax,8),%rsi
+   c:	48 8b 06             	mov    (%rsi),%rax
+   f:	48 8d 48 11          	lea    0x11(%rax),%rcx
+  13:	48 ba 56 55 55 55 55 	movabs $0x5555555555555556,%rdx
+  1a:	55 55 55 
+  1d:	48 89 c8             	mov    %rcx,%rax
+  20:	48 f7 ea             	imul   %rdx
+  23:	48 89 c8             	mov    %rcx,%rax
+  26:	48 c1 f8 3f          	sar    $0x3f,%rax
+  2a:	48 29 c2             	sub    %rax,%rdx
+  2d:	48 8d 04 52          	lea    (%rdx,%rdx,2),%rax
+  31:	48 29 c1             	sub    %rax,%rcx
+  34:	48 89 0e             	mov    %rcx,(%rsi)
+  37:	c3                   	ret
+== map5 ==
+
+dumps/map5.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	41 57                	push   %r15
+   6:	41 56                	push   %r14
+   8:	41 55                	push   %r13
+   a:	41 54                	push   %r12
+   c:	55                   	push   %rbp
+   d:	53                   	push   %rbx
+   e:	48 83 ec 18          	sub    $0x18,%rsp
+  12:	49 89 fe             	mov    %rdi,%r14
+  15:	48 89 f3             	mov    %rsi,%rbx
+  18:	49 89 d5             	mov    %rdx,%r13
+  1b:	49 89 cc             	mov    %rcx,%r12
+  1e:	4c 89 c5             	mov    %r8,%rbp
+  21:	48 8b 06             	mov    (%rsi),%rax
+  24:	8b 10                	mov    (%rax),%edx
+  26:	48 8d 48 04          	lea    0x4(%rax),%rcx
+  2a:	48 89 0e             	mov    %rcx,(%rsi)
+  2d:	44 8b 78 04          	mov    0x4(%rax),%r15d
+  31:	48 83 c0 08          	add    $0x8,%rax
+  35:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  3a:	48 63 c2             	movslq %edx,%rax
+  3d:	48 8d 14 87          	lea    (%rdi,%rax,4),%rdx
+  41:	48 89 16             	mov    %rdx,(%rsi)
+  44:	8b 02                	mov    (%rdx),%eax
+  46:	48 83 c2 04          	add    $0x4,%rdx
+  4a:	48 89 16             	mov    %rdx,(%rsi)
+  4d:	83 f8 1c             	cmp    $0x1c,%eax
+  50:	74 2d                	je     0x7f
+  52:	4c 63 c8             	movslq %eax,%r9
+  55:	49 89 e8             	mov    %rbp,%r8
+  58:	4c 89 e1             	mov    %r12,%rcx
+  5b:	4c 89 ea             	mov    %r13,%rdx
+  5e:	48 89 de             	mov    %rbx,%rsi
+  61:	4c 89 f7             	mov    %r14,%rdi
+  64:	b8 00 00 00 00       	mov    $0x0,%eax
+  69:	42 ff 54 cd 00       	call   *0x0(%rbp,%r9,8)
+  6e:	48 8b 13             	mov    (%rbx),%rdx
+  71:	8b 02                	mov    (%rdx),%eax
+  73:	48 83 c2 04          	add    $0x4,%rdx
+  77:	48 89 13             	mov    %rdx,(%rbx)
+  7a:	83 f8 1c             	cmp    $0x1c,%eax
+  7d:	75 d3                	jne    0x52
+  7f:	41 8b 04 24          	mov    (%r12),%eax
+  83:	48 63 d0             	movslq %eax,%rdx
+  86:	49 8b 54 d5 f8       	mov    -0x8(%r13,%rdx,8),%rdx
+  8b:	83 e8 01             	sub    $0x1,%eax
+  8e:	44 29 f8             	sub    %r15d,%eax
+  91:	48 98                	cltq
+  93:	49 89 54 c5 00       	mov    %rdx,0x0(%r13,%rax,8)
+  98:	45 29 3c 24          	sub    %r15d,(%r12)
+  9c:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+  a1:	48 89 03             	mov    %rax,(%rbx)
+  a4:	48 83 c4 18          	add    $0x18,%rsp
+  a8:	5b                   	pop    %rbx
+  a9:	5d                   	pop    %rbp
+  aa:	41 5c                	pop    %r12
+  ac:	41 5d                	pop    %r13
+  ae:	41 5e                	pop    %r14
+  b0:	41 5f                	pop    %r15
+  b2:	c3                   	ret
+== map6 ==
+
+dumps/map6.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	48 63 01             	movslq (%rcx),%rax
+   7:	48 c1 e0 03          	shl    $0x3,%rax
+   b:	48 8d 74 02 f0       	lea    -0x10(%rdx,%rax,1),%rsi
+  10:	48 8b 3e             	mov    (%rsi),%rdi
+  13:	48 39 7c 02 f8       	cmp    %rdi,-0x8(%rdx,%rax,1)
+  18:	0f 95 c0             	setne  %al
+  1b:	0f b6 c0             	movzbl %al,%eax
+  1e:	48 89 06             	mov    %rax,(%rsi)
+  21:	83 29 01             	subl   $0x1,(%rcx)
+  24:	c3                   	ret
+== map7 ==
+
+dumps/map7.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	48 63 01             	movslq (%rcx),%rax
+   7:	48 c7 44 c2 f8 00 00 	movq   $0x0,-0x8(%rdx,%rax,8)
+   e:	00 00 
+  10:	83 29 01             	subl   $0x1,(%rcx)
+  13:	c3                   	ret
+== map8 ==
+
+dumps/map8.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	48 63 01             	movslq (%rcx),%rax
+   7:	48 8b 44 c2 f8       	mov    -0x8(%rdx,%rax,8),%rax
+   c:	0f b6 10             	movzbl (%rax),%edx
+   f:	84 d2                	test   %dl,%dl
+  11:	74 27                	je     0x3a
+  13:	b9 00 00 00 00       	mov    $0x0,%ecx
+  18:	be 01 00 00 00       	mov    $0x1,%esi
+  1d:	eb 10                	jmp    0x2f
+  1f:	c6 00 00             	movb   $0x0,(%rax)
+  22:	89 f1                	mov    %esi,%ecx
+  24:	48 83 c0 01          	add    $0x1,%rax
+  28:	0f b6 10             	movzbl (%rax),%edx
+  2b:	84 d2                	test   %dl,%dl
+  2d:	74 0b                	je     0x3a
+  2f:	80 fa 0a             	cmp    $0xa,%dl
+  32:	74 eb                	je     0x1f
+  34:	85 c9                	test   %ecx,%ecx
+  36:	74 ec                	je     0x24
+  38:	eb e5                	jmp    0x1f
+  3a:	c3                   	ret
+== map9 ==
+
+dumps/map9.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	48 63 01             	movslq (%rcx),%rax
+   7:	48 8d 74 c2 f8       	lea    -0x8(%rdx,%rax,8),%rsi
+   c:	48 8b 0e             	mov    (%rsi),%rcx
+   f:	48 89 c8             	mov    %rcx,%rax
+  12:	80 39 00             	cmpb   $0x0,(%rcx)
+  15:	74 17                	je     0x2e
+  17:	48 89 c2             	mov    %rax,%rdx
+  1a:	48 83 c0 01          	add    $0x1,%rax
+  1e:	80 38 00             	cmpb   $0x0,(%rax)
+  21:	75 f4                	jne    0x17
+  23:	29 ca                	sub    %ecx,%edx
+  25:	8d 42 01             	lea    0x1(%rdx),%eax
+  28:	48 98                	cltq
+  2a:	48 89 06             	mov    %rax,(%rsi)
+  2d:	c3                   	ret
+  2e:	b8 00 00 00 00       	mov    $0x0,%eax
+  33:	eb f3                	jmp    0x28
+== map10 ==
+
+dumps/map10.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	48 8b 06             	mov    (%rsi),%rax
+   7:	8b 38                	mov    (%rax),%edi
+   9:	48 83 c0 04          	add    $0x4,%rax
+   d:	48 89 06             	mov    %rax,(%rsi)
+  10:	8b 31                	mov    (%rcx),%esi
+  12:	8d 46 ff             	lea    -0x1(%rsi),%eax
+  15:	29 f8                	sub    %edi,%eax
+  17:	48 98                	cltq
+  19:	48 8b 04 c2          	mov    (%rdx,%rax,8),%rax
+  1d:	48 63 f6             	movslq %esi,%rsi
+  20:	48 89 04 f2          	mov    %rax,(%rdx,%rsi,8)
+  24:	83 01 01             	addl   $0x1,(%rcx)
+  27:	c3                   	ret
+== map11 ==
+
+dumps/map11.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	48 63 01             	movslq (%rcx),%rax
+   7:	48 c1 e0 03          	shl    $0x3,%rax
+   b:	48 8d 7c 02 f0       	lea    -0x10(%rdx,%rax,1),%rdi
+  10:	48 8b 37             	mov    (%rdi),%rsi
+  13:	0b 74 02 f8          	or     -0x8(%rdx,%rax,1),%esi
+  17:	89 f0                	mov    %esi,%eax
+  19:	48 89 07             	mov    %rax,(%rdi)
+  1c:	83 29 01             	subl   $0x1,(%rcx)
+  1f:	c3                   	ret
+== map12 ==
+
+dumps/map12.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	48 63 01             	movslq (%rcx),%rax
+   7:	48 8b 74 c2 f8       	mov    -0x8(%rdx,%rax,8),%rsi
+   c:	48 89 34 c2          	mov    %rsi,(%rdx,%rax,8)
+  10:	83 01 01             	addl   $0x1,(%rcx)
+  13:	c3                   	ret
+== map13 ==
+
+dumps/map13.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	48 89 c8             	mov    %rcx,%rax
+   7:	48 63 09             	movslq (%rcx),%rcx
+   a:	48 c1 e1 03          	shl    $0x3,%rcx
+   e:	48 8d 74 0a f0       	lea    -0x10(%rdx,%rcx,1),%rsi
+  13:	48 8b 4c 0a f8       	mov    -0x8(%rdx,%rcx,1),%rcx
+  18:	8b 16                	mov    (%rsi),%edx
+  1a:	d3 e2                	shl    %cl,%edx
+  1c:	89 d7                	mov    %edx,%edi
+  1e:	48 89 3e             	mov    %rdi,(%rsi)
+  21:	83 28 01             	subl   $0x1,(%rax)
+  24:	c3                   	ret
+== map14 ==
+
+dumps/map14.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	48 89 d7             	mov    %rdx,%rdi
+   7:	48 8b 06             	mov    (%rsi),%rax
+   a:	8b 10                	mov    (%rax),%edx
+   c:	48 83 c0 04          	add    $0x4,%rax
+  10:	48 89 06             	mov    %rax,(%rsi)
+  13:	8b 01                	mov    (%rcx),%eax
+  15:	4c 63 c0             	movslq %eax,%r8
+  18:	4a 8b 7c c7 f8       	mov    -0x8(%rdi,%r8,8),%rdi
+  1d:	83 e8 01             	sub    $0x1,%eax
+  20:	89 01                	mov    %eax,(%rcx)
+  22:	48 85 ff             	test   %rdi,%rdi
+  25:	74 0a                	je     0x31
+  27:	48 63 d2             	movslq %edx,%rdx
+  2a:	48 c1 e2 02          	shl    $0x2,%rdx
+  2e:	48 01 16             	add    %rdx,(%rsi)
+  31:	c3                   	ret
+== map15 ==
+
+dumps/map15.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	48 8b 06             	mov    (%rsi),%rax
+   7:	8b 38                	mov    (%rax),%edi
+   9:	48 83 c0 04          	add    $0x4,%rax
+   d:	48 89 06             	mov    %rax,(%rsi)
+  10:	48 63 31             	movslq (%rcx),%rsi
+  13:	48 89 f0             	mov    %rsi,%rax
+  16:	48 89 3c f2          	mov    %rdi,(%rdx,%rsi,8)
+  1a:	83 c0 01             	add    $0x1,%eax
+  1d:	89 01                	mov    %eax,(%rcx)
+  1f:	c3                   	ret
+  20:	38                   	.byte 0x38
+== map16 ==
+
+dumps/map16.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	48 63 01             	movslq (%rcx),%rax
+   7:	48 c1 e0 03          	shl    $0x3,%rax
+   b:	48 8d 74 02 f0       	lea    -0x10(%rdx,%rax,1),%rsi
+  10:	48 8b 3e             	mov    (%rsi),%rdi
+  13:	48 39 7c 02 f8       	cmp    %rdi,-0x8(%rdx,%rax,1)
+  18:	0f 94 c0             	sete   %al
+  1b:	0f b6 c0             	movzbl %al,%eax
+  1e:	48 89 06             	mov    %rax,(%rsi)
+  21:	83 29 01             	subl   $0x1,(%rcx)
+  24:	c3                   	ret
+== map17 ==
+
+dumps/map17.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	49 89 d0             	mov    %rdx,%r8
+   7:	48 63 31             	movslq (%rcx),%rsi
+   a:	48 c1 e6 03          	shl    $0x3,%rsi
+   e:	48 8d 7c 32 f0       	lea    -0x10(%rdx,%rsi,1),%rdi
+  13:	48 8b 07             	mov    (%rdi),%rax
+  16:	48 99                	cqto
+  18:	49 f7 7c 30 f8       	idivq  -0x8(%r8,%rsi,1)
+  1d:	48 89 07             	mov    %rax,(%rdi)
+  20:	83 29 01             	subl   $0x1,(%rcx)
+  23:	c3                   	ret
+== map18 ==
+
+dumps/map18.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	48 8b 06             	mov    (%rsi),%rax
+   7:	48 63 10             	movslq (%rax),%rdx
+   a:	48 c1 e2 02          	shl    $0x2,%rdx
+   e:	48 29 d0             	sub    %rdx,%rax
+  11:	48 89 06             	mov    %rax,(%rsi)
+  14:	c3                   	ret
+== map19 ==
+
+dumps/map19.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	48 89 c8             	mov    %rcx,%rax
+   7:	48 63 09             	movslq (%rcx),%rcx
+   a:	48 c1 e1 03          	shl    $0x3,%rcx
+   e:	48 8d 74 0a f0       	lea    -0x10(%rdx,%rcx,1),%rsi
+  13:	48 8b 4c 0a f8       	mov    -0x8(%rdx,%rcx,1),%rcx
+  18:	8b 16                	mov    (%rsi),%edx
+  1a:	d3 ea                	shr    %cl,%edx
+  1c:	89 d7                	mov    %edx,%edi
+  1e:	48 89 3e             	mov    %rdi,(%rsi)
+  21:	83 28 01             	subl   $0x1,(%rax)
+  24:	c3                   	ret
+== map20 ==
+
+dumps/map20.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	49 89 d0             	mov    %rdx,%r8
+   7:	48 63 31             	movslq (%rcx),%rsi
+   a:	48 c1 e6 03          	shl    $0x3,%rsi
+   e:	48 8d 7c 32 f0       	lea    -0x10(%rdx,%rsi,1),%rdi
+  13:	48 8b 07             	mov    (%rdi),%rax
+  16:	48 99                	cqto
+  18:	49 f7 7c 30 f8       	idivq  -0x8(%r8,%rsi,1)
+  1d:	48 89 17             	mov    %rdx,(%rdi)
+  20:	83 29 01             	subl   $0x1,(%rcx)
+  23:	c3                   	ret
+== map21 ==
+
+dumps/map21.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	48 63 01             	movslq (%rcx),%rax
+   7:	48 c1 e0 03          	shl    $0x3,%rax
+   b:	48 8b 74 02 f8       	mov    -0x8(%rdx,%rax,1),%rsi
+  10:	48 01 74 02 f0       	add    %rsi,-0x10(%rdx,%rax,1)
+  15:	83 29 01             	subl   $0x1,(%rcx)
+  18:	c3                   	ret
+== map22 ==
+
+dumps/map22.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	48 63 01             	movslq (%rcx),%rax
+   7:	48 8d 54 c2 f8       	lea    -0x8(%rdx,%rax,8),%rdx
+   c:	48 8b 02             	mov    (%rdx),%rax
+   f:	48 8d 44 40 fa       	lea    -0x6(%rax,%rax,2),%rax
+  14:	48 01 c0             	add    %rax,%rax
+  17:	48 89 02             	mov    %rax,(%rdx)
+  1a:	c3                   	ret
+== map23 ==
+
+dumps/map23.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	48 63 01             	movslq (%rcx),%rax
+   7:	48 c1 e0 03          	shl    $0x3,%rax
+   b:	48 8d 7c 02 f0       	lea    -0x10(%rdx,%rax,1),%rdi
+  10:	48 8b 37             	mov    (%rdi),%rsi
+  13:	48 0f af 74 02 f8    	imul   -0x8(%rdx,%rax,1),%rsi
+  19:	48 89 37             	mov    %rsi,(%rdi)
+  1c:	83 29 01             	subl   $0x1,(%rcx)
+  1f:	c3                   	ret

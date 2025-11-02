@@ -1,0 +1,169 @@
+Function "__libc_start_main" not defined.
+Breakpoint 1 (__libc_start_main) pending.
+Starting program: /workspace/htb_aswqx4d/rev_vvm/vvm 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, __libc_start_main_impl (main=0x555555555180, argc=1, argv=0x7fffffffe998, init=0x0, fini=0x0, rtld_fini=0x7ffff7fca380 <_dl_fini>, stack_end=0x7fffffffe988) at ../csu/libc-start.c:242
+warning: 242	../csu/libc-start.c: No such file or directory
+Breakpoint 2 at 0x55555555536f
+Continuing.
+
+Breakpoint 2, 0x000055555555536f in ?? ()
+'recorded_count' has unknown type; cast it to its declared type
+ >'recorded_count' has unknown type; cast it to its declared type
+'recorded_maps' has unknown type; cast it to its declared type
+This command cannot be used at the top level.
+'recorded_maps' has unknown type; cast it to its declared type
+'recorded_sizes' has unknown type; cast it to its declared type
+Value can't be converted to integer.
+A debugging session is active.
+
+	Inferior 1 [process 12104] will be killed.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+Function "__libc_start_main" not defined.
+Breakpoint 1 (__libc_start_main) pending.
+Starting program: /workspace/htb_aswqx4d/rev_vvm/vvm 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, __libc_start_main_impl (main=0x555555555180, argc=1, argv=0x7fffffffe998, init=0x0, fini=0x0, rtld_fini=0x7ffff7fca380 <_dl_fini>, stack_end=0x7fffffffe988) at ../csu/libc-start.c:242
+warning: 242	../csu/libc-start.c: No such file or directory
+Breakpoint 2 at 0x55555555536f
+Continuing.
+
+Breakpoint 2, 0x000055555555536f in ?? ()
+recorded_count=24
+ >Function "__libc_start_main" not defined.
+Breakpoint 1 (__libc_start_main) pending.
+Starting program: /workspace/htb_aswqx4d/rev_vvm/vvm 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, __libc_start_main_impl (main=0x555555555180, argc=1, argv=0x7fffffffe998, init=0x0, fini=0x0, rtld_fini=0x7ffff7fca380 <_dl_fini>, stack_end=0x7fffffffe988) at ../csu/libc-start.c:242
+warning: 242	../csu/libc-start.c: No such file or directory
+Breakpoint 2 at 0x55555555536f
+Continuing.
+
+Breakpoint 2, 0x000055555555536f in ?? ()
+recorded_count=24
+ >Function "__libc_start_main" not defined.
+Breakpoint 1 (__libc_start_main) pending.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, __libc_start_main_impl (main=0x555555555180, argc=1, argv=0x7fffffffe998, init=0x0, fini=0x0, rtld_fini=0x7ffff7fca380 <_dl_fini>, stack_end=0x7fffffffe988) at ../csu/libc-start.c:242
+warning: 242	../csu/libc-start.c: No such file or directory
+Breakpoint 2 at 0x55555555536f
+
+Breakpoint 2, 0x000055555555536f in ?? ()
+Python Exception <class 'gdb.error'>: 'recorded_count' has unknown type; cast it to its declared type
+/workspace/htb_aswqx4d/gdb_cmds.txt:26: Error in sourced command file:
+Error occurred in Python: 'recorded_count' has unknown type; cast it to its declared type
+(gdb) A debugging session is active.
+
+	Inferior 1 [process 12901] will be killed.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+Function "__libc_start_main" not defined.
+Breakpoint 1 (__libc_start_main) pending.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, __libc_start_main_impl (main=0x555555555180, argc=1, argv=0x7fffffffe998, init=0x0, fini=0x0, rtld_fini=0x7ffff7fca380 <_dl_fini>, stack_end=0x7fffffffe988) at ../csu/libc-start.c:242
+warning: 242	../csu/libc-start.c: No such file or directory
+Breakpoint 2 at 0x55555555536f
+
+Breakpoint 2, 0x000055555555536f in ?? ()
+Python Exception <class 'gdb.error'>: 'recorded_maps' has unknown type; cast it to its declared type
+/workspace/htb_aswqx4d/gdb_cmds.txt:26: Error in sourced command file:
+Error occurred in Python: 'recorded_maps' has unknown type; cast it to its declared type
+(gdb) A debugging session is active.
+
+	Inferior 1 [process 13286] will be killed.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+Function "__libc_start_main" not defined.
+Breakpoint 1 (__libc_start_main) pending.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, __libc_start_main_impl (main=0x555555555180, argc=1, argv=0x7fffffffe998, init=0x0, fini=0x0, rtld_fini=0x7ffff7fca380 <_dl_fini>, stack_end=0x7fffffffe988) at ../csu/libc-start.c:242
+warning: 242	../csu/libc-start.c: No such file or directory
+Breakpoint 2 at 0x55555555536f
+
+Breakpoint 2, 0x000055555555536f in ?? ()
+Python Exception <class 'NameError'>: name 'little' is not defined
+/workspace/htb_aswqx4d/gdb_cmds.txt:30: Error in sourced command file:
+Error occurred in Python: name 'little' is not defined
+(gdb) A debugging session is active.
+
+	Inferior 1 [process 13849] will be killed.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+Function "__libc_start_main" not defined.
+Breakpoint 1 (__libc_start_main) pending.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, __libc_start_main_impl (main=0x555555555180, argc=1, argv=0x7fffffffe998, init=0x0, fini=0x0, rtld_fini=0x7ffff7fca380 <_dl_fini>, stack_end=0x7fffffffe988) at ../csu/libc-start.c:242
+warning: 242	../csu/libc-start.c: No such file or directory
+Breakpoint 2 at 0x55555555536f
+
+Breakpoint 2, 0x000055555555536f in ?? ()
+Python Exception <class 'NameError'>: name 'little' is not defined
+/workspace/htb_aswqx4d/gdb_cmds.txt:30: Error in sourced command file:
+Error occurred in Python: name 'little' is not defined
+(gdb) A debugging session is active.
+
+	Inferior 1 [process 14234] will be killed.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+Function "__libc_start_main" not defined.
+Breakpoint 1 (__libc_start_main) pending.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, __libc_start_main_impl (main=0x555555555180, argc=1, argv=0x7fffffffe998, init=0x0, fini=0x0, rtld_fini=0x7ffff7fca380 <_dl_fini>, stack_end=0x7fffffffe988) at ../csu/libc-start.c:242
+warning: 242	../csu/libc-start.c: No such file or directory
+Breakpoint 2 at 0x55555555536f
+
+Breakpoint 2, 0x000055555555536f in ?? ()
+map[0]=0x7ffff7fb6000 len=27
+map[1]=0x7ffff7fb5000 len=42
+map[2]=0x7ffff7fb4000 len=25
+map[3]=0x7ffff7fb3000 len=18
+map[4]=0x7ffff7fb2000 len=56
+map[5]=0x7ffff7fb1000 len=179
+map[6]=0x7ffff7fb0000 len=37
+map[7]=0x7ffff7faf000 len=20
+map[8]=0x7ffff7d99000 len=59
+map[9]=0x7ffff7d98000 len=53
+map[10]=0x7ffff7d97000 len=40
+map[11]=0x7ffff7d96000 len=32
+map[12]=0x7ffff7d95000 len=20
+map[13]=0x7ffff7d94000 len=37
+map[14]=0x7ffff7d93000 len=50
+map[15]=0x7ffff7d92000 len=33
+map[16]=0x7ffff7d91000 len=37
+map[17]=0x7ffff7d90000 len=36
+map[18]=0x7ffff7d8f000 len=21
+map[19]=0x7ffff7d8e000 len=37
+map[20]=0x7ffff7d8d000 len=36
+map[21]=0x7ffff7d8c000 len=25
+map[22]=0x7ffff7d8b000 len=27
+map[23]=0x7ffff7d8a000 len=32
+0x7ffff7fb1000:	0xf3	0x0f	0x1e	0xfa	0x41	0x57	0x41	0x56
+0x7ffff7fb1008:	0x41	0x55	0x41	0x54	0x55	0x53	0x48	0x83
+0x7ffff7fb1010:	0xec	0x18	0x49	0x89	0xfe	0x48	0x89	0xf3
+0x7ffff7fb1018:	0x49	0x89	0xd5	0x49	0x89	0xcc	0x4c	0x89
+0x7ffff7fb1020:	0xc5	0x48	0x8b	0x06	0x8b	0x10	0x48	0x8d
+0x7ffff7fb1028:	0x48	0x04	0x48	0x89	0x0e	0x44	0x8b	0x78
+0x7ffff7fb1030:	0x04	0x48	0x83	0xc0	0x08	0x48	0x89	0x44
+0x7ffff7fb1038:	0x24	0x08	0x48	0x63	0xc2	0x48	0x8d	0x14
+A debugging session is active.
+
+	Inferior 1 [process 14442] will be killed.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]

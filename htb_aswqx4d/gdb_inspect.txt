@@ -1,0 +1,25 @@
+set pagination off
+set environment OVERRIDE_INPUT test
+set environment LD_PRELOAD /workspace/htb_aswqx4d/override.so
+set breakpoint pending on
+break __libc_start_main
+run
+set $base = $rdi - 0x1530
+set $addr_getline_call = $base + 0x171f
+break *$addr_getline_call
+continue
+python
+import gdb
+inf = gdb.selected_inferior()
+count = int(gdb.parse_and_eval("(int)recorded_count"))
+base_maps = int(gdb.parse_and_eval("(long)&recorded_maps"))
+addr_bytes = inf.read_memory(base_maps + 5 * 8, 8)
+addr = int.from_bytes(addr_bytes.tobytes(), byteorder='little', signed=False)
+gdb.execute(f"break *0x{addr:x}")
+end
+continue
+info registers rdi rsi rdx rcx r8
+x/4gx $rsi
+x/8wx $rsi
+x/16wx $rdi
+quit
