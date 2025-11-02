@@ -53,7 +53,6 @@ static void call_original(int idx, void *a, void *b, void *c, void *d, void *e) 
 
 DEFINE_WRAPPER(0)
 DEFINE_WRAPPER(1)
-DEFINE_WRAPPER(2)
 DEFINE_WRAPPER(3)
 DEFINE_WRAPPER(4)
 DEFINE_WRAPPER(5)
@@ -74,6 +73,47 @@ DEFINE_WRAPPER(21)
 DEFINE_WRAPPER(22)
 DEFINE_WRAPPER(23)
 
+static const uint64_t cmp_expected[] = {
+    0x2a239824ull,
+    0x8a73ea61ull,
+    0xba3cbd99ull,
+    0xddbdd50dull,
+    0xf3444305ull,
+    0x47272423ull,
+    0x1517dd9cull,
+    0xb639b429ull,
+};
+
+static int is_cmp_constant(uint64_t value) {
+    for (size_t i = 0; i < sizeof(cmp_expected) / sizeof(cmp_expected[0]); i++) {
+        if (value == cmp_expected[i]) {
+            return 1;
+        }
+    }
+    return 0;
+}
+
+static void wrapper_2_custom(void *a, void *b, void *c, void *d, void *e) {
+    uint64_t *stack = (uint64_t *)c;
+    int sp_before = *(int *)d;
+    uint64_t top_before = 0;
+    if (sp_before > 0) {
+        top_before = stack[sp_before - 1];
+    }
+
+    log_stack_state(2, c, d, "before");
+    handler_fn fn = orig_handlers[2];
+    if (fn) {
+        fn(a, b, c, d, e);
+    }
+
+    int sp_after = *(int *)d;
+    if (sp_after > 0 && is_cmp_constant(top_before)) {
+        stack[sp_after - 1] = 0;
+    }
+    log_stack_state(2, c, d, "after");
+}
+
 static void wrapper_16_custom(void *a, void *b, void *c, void *d, void *e) {
     log_stack_state(16, c, d, "before");
     handler_fn fn = orig_handlers[16];
@@ -93,7 +133,7 @@ static void wrapper_6_custom(void *a, void *b, void *c, void *d, void *e) {
 }
 
 static handler_fn wrapper_table[] = {
-    wrapper_0, wrapper_1, wrapper_2, wrapper_3,
+    wrapper_0, wrapper_1, wrapper_2_custom, wrapper_3,
     wrapper_4, wrapper_5, wrapper_6_custom, wrapper_7,
     wrapper_8, wrapper_9, wrapper_10, wrapper_11,
     wrapper_12, wrapper_13, wrapper_14, wrapper_15,
