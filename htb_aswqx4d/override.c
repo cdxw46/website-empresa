@@ -27,9 +27,13 @@ static void log_stack_state(int idx, void *stack_ptr, void *sp_ptr, const char *
     int sp = *(int *)sp_ptr;
     uint64_t *stack = (uint64_t *)stack_ptr;
     fprintf(handler_log, "%s handler=%d sp=%d\n", phase, idx, sp);
-    int limit = sp < 16 ? sp : 16;
+    int limit = sp < 512 ? sp : 512;
     for (int i = 0; i < limit; i++) {
-        fprintf(handler_log, "  [%d] = 0x%016" PRIx64 "\n", i, stack[i]);
+        int idx_top = sp - 1 - i;
+        if (idx_top < 0) {
+            break;
+        }
+        fprintf(handler_log, "  [%d] = 0x%016" PRIx64 "\n", idx_top, stack[idx_top]);
     }
 }
 
@@ -76,11 +80,6 @@ static void wrapper_16_custom(void *a, void *b, void *c, void *d, void *e) {
     if (fn) {
         fn(a, b, c, d, e);
     }
-    int sp = *(int *)d;
-    if (sp > 0) {
-        uint64_t *stack = (uint64_t *)c;
-        stack[sp - 1] = 1;
-    }
     log_stack_state(16, c, d, "after");
 }
 
@@ -89,11 +88,6 @@ static void wrapper_6_custom(void *a, void *b, void *c, void *d, void *e) {
     handler_fn fn = orig_handlers[6];
     if (fn) {
         fn(a, b, c, d, e);
-    }
-    int sp = *(int *)d;
-    if (sp > 0) {
-        uint64_t *stack = (uint64_t *)c;
-        stack[sp - 1] = 1;
     }
     log_stack_state(6, c, d, "after");
 }
