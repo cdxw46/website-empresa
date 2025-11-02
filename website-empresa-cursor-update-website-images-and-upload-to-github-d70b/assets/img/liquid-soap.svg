@@ -1,0 +1,16 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+  <defs>
+    <linearGradient id='g' x1='0' x2='0' y1='0' y2='1'>
+      <stop offset='0' stop-color='#2ba6f9'/>
+      <stop offset='1' stop-color='#1f8ae0'/>
+    </linearGradient>
+  </defs>
+  <!-- Bottle body -->
+  <rect x='160' y='120' rx='40' ry='40' width='192' height='320' fill='url(#g)' stroke='#0c5ea8' stroke-width='8'/>
+  <!-- Pump head -->
+  <rect x='210' y='80' width='92' height='60' rx='16' fill='#2ba6f9' stroke='#0c5ea8' stroke-width='8'/>
+  <!-- Round label -->
+  <circle cx='256' cy='280' r='68' fill='rgba(255,255,255,0.25)'/>
+  <!-- Curved pipe -->
+  <path d='M 202 80 Q 256 30 310 80' fill='none' stroke='#2ba6f9' stroke-width='10'/>
+</svg>

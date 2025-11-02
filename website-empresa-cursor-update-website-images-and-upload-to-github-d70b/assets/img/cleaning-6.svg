@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Limpiador de cristales profesional">
+  <rect width="1200" height="900" fill="#1b1d23"/>
+  <g fill="none" stroke="#2ba6f9" stroke-width="24" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="360" y="260" width="480" height="320" rx="24" fill="#0e1216" stroke="#2ba6f9"/>
+    <path d="M380 320h160m40 0h160" stroke="#2ba6f9"/>
+    <path d="M520 560h160" stroke="#f6f8fc"/>
+    <path d="M600 560v180" stroke="#2ba6f9"/>
+  </g>
+  <text x="50%" y="840" fill="#c0c7d6" font-size="40" text-anchor="middle" font-family="system-ui,Segoe UI,Roboto">Cristales Pro</text>
+</svg>

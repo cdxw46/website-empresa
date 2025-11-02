@@ -1,0 +1,237 @@
+:root {
+  --bg: #0e1216;
+  --fg: #f6f8fc;
+  --muted: #c0c7d6;
+  --primary: #2ba6f9;
+  /* Azul más acorde con temática de limpieza */
+  --primary-600: #1f8ae0;
+  --card: #14171d;
+  --border: #2a2e39;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: rgba(21, 22, 26, 0.7);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+}
+
+.logo {
+  font-weight: 700;
+  color: var(--fg);
+  text-decoration: none;
+  letter-spacing: .5px;
+}
+
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 16px;
+}
+
+.nav a.active,
+.nav a:hover {
+  color: var(--fg);
+}
+
+.hero {
+  padding: 64px 0;
+  background:
+    radial-gradient(800px 400px at 20% -10%, rgba(43,166,249,.18), transparent),
+    linear-gradient(180deg, rgba(43,166,249,.12), transparent);
+}
+
+.hero h1 {
+  font-size: 32px;
+  margin: 0 0 12px;
+}
+
+.cta-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-primary:hover {
+  background: var(--primary-600);
+}
+
+.btn-secondary {
+  background: #1f2128;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 24px 0;
+}
+
+.feature {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.age-gate {
+  margin: 24px auto;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.age-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border-color: var(--primary);
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  /* Fijamos una altura para que las fotos altas (botellas) se vean completas */
+  max-height: 260px;
+  /* Evita recortes: muestra la imagen completa dentro del cuadro */
+  object-fit: contain;
+  background: #ffffff; /* fondo claro para resaltar imágenes con transparencia */
+  padding: 8px;
+  margin: 0 auto;
+  border-radius: 8px 8px 0 0;
+  transition: transform 0.3s ease;
+  filter: saturate(1.05) contrast(1.02);
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  margin: 12px 12px 0;
+}
+
+.card p {
+  margin: 8px 12px 12px;
+  color: var(--muted);
+}
+
+.card .btn {
+  margin: 0 12px 12px;
+}
+
+.contact-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 32px;
+}
+
+.site-footer .container {
+  padding: 24px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-footer nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 16px;
+}
+
+.site-footer nav a:hover {
+  color: var(--fg);
+}
+
+@media (max-width: 900px) {
+
+  .features,
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+
+  .features,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+}
