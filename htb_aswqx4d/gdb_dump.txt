@@ -1,0 +1,26 @@
+set pagination off
+set environment LD_PRELOAD /workspace/htb_aswqx4d/override.so
+set breakpoint pending on
+break __libc_start_main
+run
+set $base = $rdi - 0x1530
+set $addr_getline_call = $base + 0x171f
+break *$addr_getline_call
+continue
+python
+import gdb
+inf = gdb.selected_inferior()
+count = int(gdb.parse_and_eval("(int)recorded_count"))
+base_maps = int(gdb.parse_and_eval("(long)&recorded_maps"))
+base_sizes = int(gdb.parse_and_eval("(long)&recorded_sizes"))
+for i in range(count):
+    addr_bytes = inf.read_memory(base_maps + i * 8, 8)
+    size_bytes = inf.read_memory(base_sizes + i * 8, 8)
+    addr = int.from_bytes(addr_bytes.tobytes(), byteorder='little', signed=False)
+    size = int.from_bytes(size_bytes.tobytes(), byteorder='little', signed=False)
+    gdb.write(f"dumping map[{i}] addr=0x{addr:x} len={size}\n")
+    if size > 0:
+        gdb.execute(f"dump binary memory /workspace/htb_aswqx4d/dumps/map{i}.bin 0x{addr:x} 0x{addr + size:x}")
+end
+end
+quit

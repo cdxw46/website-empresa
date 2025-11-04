@@ -1,0 +1,43 @@
+Base:
+  block0: expected=0x2a239824 computed=0xb0b0b0b0
+  block1: expected=0x8a73ea61 computed=0x0b0b0b0b
+  block2: expected=0xba3cbd99 computed=0xb0b0b0b0
+  block3: expected=0xddbdd50d computed=0x85858585
+  block4: expected=0xf3444305 computed=0x16161616
+  block5: expected=0x47272423 computed=0x16161616
+  block6: expected=0x1517dd9c computed=0x58585858
+  block7: expected=0xb639b429 computed=0xb0b0b0b0
+
+Per-index impact (delta values):
+pos 00: block 0 delta bytes [1, 0, 0, 128]
+pos 01: block 0 delta bytes [0, 0, 128, 0]
+pos 02: block 5 delta bytes [16, 0, 0, 0]
+pos 03: block 2 delta bytes [128, 0, 0, 0]
+pos 04: block 6 delta bytes [64, 0, 0, 0]
+pos 05: block 1 delta bytes [0, 0, 0, 8]
+pos 06: block 5 delta bytes [0, 0, 16, 0]
+pos 07: block 6 delta bytes [0, 0, 64, 0]
+pos 08: block 3 delta bytes [0, 4, 0, 0]
+pos 09: block 5 delta bytes [0, 0, 0, 16]
+pos 10: block 1 delta bytes [8, 0, 0, 0]
+pos 11: block 6 delta bytes [0, 64, 0, 0]
+pos 12: block 6 delta bytes [0, 0, 0, 64]
+pos 13: block 4 delta bytes [0, 0, 16, 0]
+pos 14: block 7 delta bytes [0, 128, 0, 0]
+pos 15: block 7 delta bytes [1, 0, 0, 128]
+pos 16: block 3 delta bytes [0, 0, 0, 4]
+pos 17: block 0 delta bytes [128, 0, 0, 0]
+pos 18: block 5 delta bytes [0, 16, 0, 0]
+pos 19: block 4 delta bytes [0, 16, 0, 0]
+pos 20: block 4 delta bytes [0, 0, 0, 16]
+pos 21: block 2 delta bytes [0, 0, 128, 0]
+pos 22: block 2 delta bytes [1, 0, 0, 128]
+pos 23: block 3 delta bytes [4, 0, 0, 0]
+pos 24: block 7 delta bytes [128, 0, 0, 0]
+pos 25: block 1 delta bytes [0, 0, 8, 0]
+pos 26: block 4 delta bytes [16, 0, 0, 0]
+pos 27: block 7 delta bytes [0, 0, 128, 0]
+pos 28: block 3 delta bytes [0, 0, 4, 0]
+pos 29: block 0 delta bytes [0, 128, 0, 0]
+pos 30: block 2 delta bytes [0, 128, 0, 0]
+pos 31: block 1 delta bytes [0, 8, 0, 0]
