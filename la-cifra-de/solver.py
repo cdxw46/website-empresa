@@ -86,9 +86,9 @@ min_temp = 0.001
 cooling = 0.9995
 temperature = start_temp
 
-TOTAL_STEPS = 2000000
-REPORT_EVERY = 100000
-RESTART_EVERY = 200000
+TOTAL_STEPS = 120000
+REPORT_EVERY = 10000
+RESTART_EVERY = 20000
 
 for step in range(1, TOTAL_STEPS + 1):
     a, b = random.sample(range(26), 2)
