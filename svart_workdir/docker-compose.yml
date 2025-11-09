@@ -1,0 +1,27 @@
+version: "3.8"
+name: "SVART BOARD"
+
+services:
+  web:
+    build: web
+    ports:
+      - "3000:3000"
+    restart: always
+  bot:
+    build: bot
+    ports:
+      - "3001:55555"
+    environment:
+      - PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+      - APP_ORIGIN=http://web:3000
+      - FLAG=ictf{FLAG}
+      # - ENVIRONMENT=development
+    restart: unless-stopped
+    read_only: true
+    cap_drop:
+      - all
+    cap_add:
+      - CAP_SETGID # Needed for su-exec
+      - CAP_SETUID # Needed for su-exec
+    tmpfs:
+      - /tmp:mode=1733,exec
